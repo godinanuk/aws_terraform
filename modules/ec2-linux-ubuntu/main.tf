@@ -15,12 +15,12 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "ec2" {
-  ami           = data.aws_ami.ubuntu.id 
-  instance_type = var.instance_type 
-  key_name = "ec2_key"
-  security_groups = var.security_groups 
-  associate_public_ip_address = var.public_ip 
-  subnet_id = var.subnet_id
+  ami                         = data.aws_ami.ubuntu.id
+  instance_type               = var.instance_type
+  key_name                    = "ec2_key"
+  security_groups             = var.security_groups
+  associate_public_ip_address = var.public_ip
+  subnet_id                   = var.subnet_id
 
   credit_specification {
     cpu_credits = "unlimited"

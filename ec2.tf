@@ -1,16 +1,16 @@
 module "ec2_web" {
-  source        = "./modules/ec2-linux-ubuntu"
-  instance_type = "t2.micro"
-  public_ip     = true
-  subnet_id     = aws_subnet.compute_subnet.id
+  source          = "./modules/ec2-linux-ubuntu"
+  instance_type   = "t2.micro"
+  public_ip       = true
+  subnet_id       = aws_subnet.compute_subnet.id
   security_groups = [aws_security_group.green_security_group.id]
 }
 
 module "ec2_db" {
-  source        = "./modules/ec2-linux-ubuntu"
-  instance_type = "t2.micro"
-  public_ip     = true 
-  subnet_id     = aws_subnet.compute_subnet.id
+  source          = "./modules/ec2-linux-ubuntu"
+  instance_type   = "t2.micro"
+  public_ip       = true
+  subnet_id       = aws_subnet.compute_subnet.id
   security_groups = [aws_security_group.green_security_group.id]
 }
 
